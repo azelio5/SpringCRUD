@@ -4,7 +4,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
-@Transactional
 @Entity
 @Table(name = "users")
 public class User {

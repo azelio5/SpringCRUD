@@ -14,7 +14,6 @@ import java.util.List;
 
 
 @Component
-@Transactional
 public class UserDaoImpl implements UserDao {
 
 
@@ -48,9 +47,9 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User deleteUser(long id) throws NullPointerException {
         User user = readUser(id);
-        if (null == user) {
-            throw new NullPointerException("User not found");
-        }
+//        if (null == user) {
+//            throw new NullPointerException("User not found");
+//        }
         entityManager.remove(user);
         entityManager.flush();
         return user;
