@@ -13,7 +13,7 @@ import javax.persistence.PersistenceUnit;
 import java.util.List;
 
 
-@Component
+@Repository
 public class UserDaoImpl implements UserDao {
 
 
@@ -45,13 +45,9 @@ public class UserDaoImpl implements UserDao {
 
 
     @Override
-    public User deleteUser(long id) throws NullPointerException {
+    public void deleteUser(long id){
         User user = readUser(id);
-//        if (null == user) {
-//            throw new NullPointerException("User not found");
-//        }
         entityManager.remove(user);
         entityManager.flush();
-        return user;
     }
 }

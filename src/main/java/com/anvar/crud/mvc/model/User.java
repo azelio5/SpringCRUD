@@ -9,8 +9,8 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    private long id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
 
     @Column(name = "name")
